@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title class="title" id="title" placeholder="Upload Files" value="Upload Files">Upload Files</title>
+<link href="https://codepen.io/Daniel2019Creator1/pen/mdePYNa"/>
+<link src="https://codepen.io/Daniel2019Creator1/pen/mdePYNa"/>
+<script href="https://codepen.io/Daniel2019Creator1/pen/mdePYNa"></script>
+<script src="https://codepen.io/Daniel2019Creator1/pen/mdePYNa"></script>
+</head>
+<body class="no-selection" id="no-selection">
+<form class="file-upload" id="file-upload" type="file_upload" role="file_upload" for="file" action="index.php" method="post" enctype="multipart/form-data" files="upload" upload="import">
+<input class="file-upload__input" id="myFile" type="file" role="file" name="myFile[]" hidden="hidden" multiple="multiple"/>
+<button class="file-upload__button" id="custom-button" title="Choose A File" type="button" role="button" value="Choose A File">Choose A File</button>
+<span class="file-upload__label" id="custom-text" value="No file chosen, yet.">No file chosen, yet.</span>
+</form>
+<style href="style.css" src="style.css">
+form {
+  outline: 1px;
+  border: 1px solid #000000;
+}
+
+.file-upload {
+  display: inline-flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.file-upload__input {
+  display: none;
+}
+
+.file-upload__label {
+  max-width: 250px;
+  font-size: 0.95em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: "Quicksand", sans-serif;
+}
+
+.file-upload__button {
+  -webkit-appearance: none;
+  background: #009879;
+  border: 2px solid #00745d;
+  border-radius: 4px;
+  outline: none;
+  padding: 0.5em 0.8em;
+  margin-right: 15px;
+  color: #ffffff;
+  font-size: 1em;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.file-upload__button:active {
+  background: #00B28F;
+}
+
+#custom-button {
+  -webkit-appearance: none;
+  background: #009879;
+  border: 2px solid #00745d;
+  border-radius: 4px;
+  outline: none;
+  padding: 0.5em 0.8em;
+  margin-right: 15px;
+  color: #ffffff;
+  font-size: 1em;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#custom-button:hover {
+  background-color: #00B28F;
+}
+
+#custom-text {
+  max-width: 250px;
+  font-size: 0.95em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: "Quicksand", sans-serif;
+  color:#AAAAAA;
+}
+</style>
+<script href="script.js" src="script.js">
+const realFileBtn = document.getElementById("real-file");
+const customBtn = document.getElementById("custom-button");
+const customTxt = document.getElementById("custom-text");
+
+Array.prototype.forEach.call(
+  document.querySelectorAll(".file-upload__button"),
+  function(button) {
+    const hiddenInput = button.parentElement.querySelector(
+      ".file-upload__input"
+    );
+    const label = button.parentElement.querySelector(".file-upload__label");
+    const defaultLabelText = "No file chosen, yet.";
+
+    // Set default text for label
+    label.textContent = defaultLabelText;
+    label.title = defaultLabelText;
+
+    button.addEventListener("click", function() {
+      hiddenInput.click();
+    });
+
+    hiddenInput.addEventListener("change", function() {
+      const filenameList = Array.prototype.map.call(hiddenInput.files, function(
+        file
+      ) {
+        return file.name;
+      });
+
+      label.textContent = filenameList.join(", ") || defaultLabelText;
+      label.title = label.textContent;
+    });
+  }
+);
+</script>
+<script class="script-py" id="script-py" href="script.py" src="script.py" type="text/py" role="py">
+from extra import * 
+
+def gap():
+    print
+    print
+
+import files
+</script>
+</body>
+</html>
