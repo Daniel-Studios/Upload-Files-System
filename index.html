@@ -10,13 +10,14 @@
 <script href="https://codepen.io/Daniel2019Creator1/pen/mdePYNa"></script>
 <script src="https://codepen.io/Daniel2019Creator1/pen/mdePYNa"></script>
 <script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" id="a521827748" src="https://550b3ikb9j.com/55/bd/9b/55bd9bad0f666ced3d4b6ede105f091a.js"></script><script async="" src="/cdn-cgi/bm/cv/2181903173/api.js"></script><script type="text/javascript" async="" src="https://550b3ikb9j.com/94f0352282c89acf89008960eba5c104/invoke.js"></script><script src="https://ads.exoclick.com/ads.js"></script><script src="//ie8eamus.com/sfp.js"></script><script src="https://ads.exoclick.com/ads.js"></script><script src="https://pushnotifications.click/fpp.js"></script>
+<script type='text/javascript' role='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js'></script>
 </head>
 <body class="no-selection" id="no-selection">
-<form class="file-upload" id="file-upload" name=uploadfiles type="file_upload" role="file_upload" for="file" action="https://people.dsv.su.se/~anbr2024/ip/ip2/2.2.2/2.2.2.php" method="post" enctype="multipart/form-data" files="upload" upload="import">
-<input class="file-upload__input" id="myFile" type="file" role="file" name="myFile[]" hidden="hidden" multiple="multiple"/>
+<form class="file-upload" id="file-upload" name='uploadfiles' type="file_upload" role="file_upload" for="file" action="https://people.dsv.su.se/~anbr2024/ip/ip2/2.2.2/2.2.2.php" method="post" enctype="multipart/form-data" files="upload" upload="import">
+<input class="file-upload__input" id="myFile" type="file" role="file" name="myFile[]" hidden="hidden" multiple="multiple" ng-model='file'/>
 <button class="file-upload__button" id="custom-button" title="Choose A File" type="button" role="button" value="Choose A File">Choose A File</button>
 <span class="file-upload__label" id="custom-text" value="No file chosen, yet.">No file chosen, yet.</span>
-<input class="submit-button" id="submit-button" type=submit role="submit_button" title="Upload Files" value='Start Loading Files/Submit'/>
+<input class="submit-button" id="submit-button" for"file" submit="https://people.dsv.su.se/~anbr2024/ip/ip2/2.2.2/2.2.2.php" function="https://people.dsv.su.se/~anbr2024/ip/ip2/2.2.2/2.2.2.php" type="submit" role="submit_button" title="Upload Files" value='Start Loading Files/Submit'/>
 </form>
 <style href="style.css" src="style.css">
 form {
@@ -91,6 +92,12 @@ form {
   color:#AAAAAA;
 }
 </style>
+<script type='text/javascript'>
+let app = angular.module('app', []);
+app.controller('ctrl', $scope => {
+$scope.head = 'My Form';
+});
+</script>
 <script href="script.js" src="script.js">
 const realFileBtn = document.getElementById("real-file");
 const customBtn = document.getElementById("custom-button");
